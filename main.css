@@ -1,0 +1,405 @@
+/* Root variables for easy customization */
+
+:root {
+
+    --color-bg-light: #f5f5f5;
+
+    --color-bg-dark: #1e1e1e;
+
+    --color-text-light: #333;
+
+    --color-text-dark: #f0f0f0;
+
+    --color-accent: #42a5f5;
+
+    --color-health: #ff7043;
+
+    --color-work: #42a5f5;
+
+    --color-personal: #66bb6a;
+
+    --color-study: #ffee58;
+
+    --transition-time: 0.3s;
+
+    --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+
+
+/* Basic styling */
+
+body {
+
+    font-family: 'Roboto', sans-serif;
+
+    background-color: var(--color-bg-light);
+
+    color: var(--color-text-light);
+
+    margin: 0;
+
+    padding: 0;
+
+    transition: background-color var(--transition-time), color var(--transition-time);
+
+}
+
+
+
+h2 {
+
+    font-family: 'Pacifico', cursive;
+
+    color: var(--color-accent);
+
+    text-align: center;
+
+    margin-bottom: 1rem;
+
+}
+
+
+
+/* Navbar styling */
+
+.navbar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 1rem 2rem;
+
+    background-color: var(--color-bg-dark);
+
+    color: var(--color-text-dark);
+
+    box-shadow: var(--box-shadow);
+
+}
+
+
+
+.navbar .logo {
+
+    font-family: 'Pacifico', cursive;
+
+    font-size: 1.5rem;
+
+}
+
+
+
+.navbar nav ul {
+
+    list-style: none;
+
+    display: flex;
+
+    gap: 1.5rem;
+
+}
+
+
+
+.navbar nav ul li {
+
+    display: inline;
+
+}
+
+
+
+.navbar nav ul li a {
+
+    color: var(--color-text-dark);
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition: color var(--transition-time);
+
+}
+
+
+
+.navbar nav ul li a:hover {
+
+    color: var(--color-accent);
+
+}
+
+
+
+.theme-toggle {
+
+    cursor: pointer;
+
+}
+
+
+
+.hamburger {
+
+    display: none;
+
+}
+
+
+
+#dark-mode-icon {
+
+    display: none;
+
+}
+
+
+
+/* Section styling */
+
+.section {
+
+    padding: 2rem;
+
+    margin: 1rem auto;
+
+    max-width: 900px;
+
+    text-align: center;
+
+}
+
+
+
+/* Task input section */
+
+.task-input {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 1rem;
+
+    margin-bottom: 1rem;
+
+}
+
+
+
+.task-input input, select {
+
+    padding: 0.5rem;
+
+    border: 1px solid var(--color-bg-dark);
+
+    border-radius: 5px;
+
+}
+
+
+
+#add-task-btn {
+
+    background-color: var(--color-accent);
+
+    color: #fff;
+
+    border: none;
+
+    padding: 0.5rem 1rem;
+
+    border-radius: 5px;
+
+    transition: transform var(--transition-time), opacity var(--transition-time);
+
+    cursor: pointer;
+
+}
+
+
+
+#add-task-btn:hover {
+
+    transform: scale(1.1);
+
+    opacity: 0.8;
+
+}
+
+
+
+/* Task list */
+
+#task-list {
+
+    list-style: none;
+
+    padding: 0;
+
+}
+
+
+
+#task-list li {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background-color: #e0e0e0;
+
+    padding: 0.5rem 1rem;
+
+    margin-bottom: 0.5rem;
+
+    border-left: 5px solid var(--color-accent);
+
+}
+
+
+
+#task-list li span {
+
+    flex-grow: 1;
+
+    margin-left: 1rem;
+
+}
+
+
+
+#task-list li button {
+
+    background: none;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 1.2rem;
+
+}
+
+
+
+/* Progress bar */
+
+.progress-container {
+
+    background-color: #f0f0f0;
+
+    border-radius: 20px;
+
+    padding: 0.25rem;
+
+    max-width: 600px;
+
+    margin: 1rem auto;
+
+}
+
+
+
+.progress-bar {
+
+    background-color: #66bb6a;
+
+    height: 20px;
+
+    border-radius: 20px;
+
+    width: 0;
+
+    transition: width 0.4s ease;
+
+}
+
+
+
+/* Dark mode styles */
+
+.dark-mode {
+
+    background-color: var(--color-bg-dark);
+
+    color: var(--color-text-dark);
+
+}
+
+
+
+.dark-mode .navbar {
+
+    background-color: var(--color-bg-dark);
+
+}
+
+
+
+.dark-mode #light-mode-icon {
+
+    display: none;
+
+}
+
+
+
+.dark-mode #dark-mode-icon {
+
+    display: inline;
+
+}
+
+
+
+/* Mobile-friendly hamburger menu */
+
+@media screen and (max-width: 768px) {
+
+    .navbar nav ul {
+
+        display: none;
+
+        flex-direction: column;
+
+        background-color: var(--color-bg-dark);
+
+        position: absolute;
+
+        top: 70px;
+
+        right: 0;
+
+        width: 100%;
+
+        padding: 0;
+
+    }
+
+
+
+    .navbar nav ul.show {
+
+        display: flex;
+
+    }
+
+
+
+    .hamburger {
+
+        display: block;
+
+        cursor: pointer;
+
+    }
+
+}
